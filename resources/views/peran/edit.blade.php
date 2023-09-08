@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 	@section('judul')
-    Edit Film
+    Edit Peran
     @endsection
 
     
@@ -19,46 +19,46 @@
 @endpush
 
 	@section('content')
-    <form method="post" action="/film/{{ $film->id }}">
+    <form method="post" action="/peran/{{ $peran->id }}">
         @csrf
         @method('PUT')
         <div class="form-group">
             <label>Judul</label>
-            <input type="text" name="judul" value="{{ $film->judul }}" class="form-control">
+            <input type="text" name="judul" value="{{ $peran->judul }}" class="form-control">
         </div>
-        @error('judul')
+        @error('Film')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
         <div class="form-group">
-            <label>Ringkasan</label>
-            <input type="text" name="ringkasan" value="{{ $film->ringkasan }}" class="form-control">
+            <label>Cast</label>
+            <input type="text" name="ringkasan" value="{{ $peran->ringkasan }}" class="form-control">
         </div>
-        @error('ringkasan')
+        @error('Cast')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
         <div class="form-group">
-            <label>Tahun</label>
-            <input type="number" name="tahun" value="{{ $film->tahun }}" class="form-control">
+            <label>Nama</label>
+            <input type="number" name="tahun" value="{{ $peran->tahun }}" class="form-control">
         </div>
-        @error('tahun')
+        @error('nama')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
         <div class="form-group">
             <label>Poster</label>
-            <input type="text" name="poster" value="{{ $film->poster }}" class="form-control">
+            <input type="text" name="poster" value="{{ $peran->poster }}" class="form-control">
         </div>
-        @error('poster')
+        @error('action')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
         <div class="form-group">
-            <label>Genre</label>
-            <input type="text" name="genre" value="{{ $film->genre }}" class="form-control">
+            <label>Action</label>
+            <input type="text" name="genre" value="{{ $peran->genre }}" class="form-control">
         </div>
-        @error('genre')
+        @error('action')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 

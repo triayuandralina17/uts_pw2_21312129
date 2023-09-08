@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 	@section('judul')
-    Tambah film
+    Tambah peran
     @endsection
 
     
@@ -19,20 +19,20 @@
 @endpush
 
 	@section('content')
-    <form method="post" action="/film">
+    <form method="post" action="/peran">
         @csrf
         <div class="form-group">
-            <label>Judul</label>
+            <label>peran</label>
             <input type="text" name="judul" value="" class="form-control">
         </div>
 
         <div class="form-group">
-            <label>Ringkasan</label>
+            <label>Cast</label>
             <input type="text" name="ringkasan" value="" class="form-control">
         </div>
 
         <div class="form-group">
-            <label>Tahun</label>
+            <label></label>
             <input type="number" name="tahun" value="" class="form-control">
         </div>
 

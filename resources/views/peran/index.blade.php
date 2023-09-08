@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @section('judul')
-    Daftar Film
+    Daftar peran
 @endsection
 
 @push('script')
@@ -19,31 +19,28 @@
 
 
 @section('content')
-<a class="btn btn-secondary mb-3" href="/film/create">Tambah Data</a>
+<a class="btn btn-secondary mb-3" href="/peran/create">Tambah Data</a>
 <table class="table" id="example1">
     <thead class="thead-dark">
         <tr>
             <th scope="col">#</th>
-            <th scope="col">Judul</th>
-            <th scope="col">Ringkasan</th>
-            <th scope="col">Tahun</th>
-            <th scope="col">Poster</th>
-            <th scope="col">Genre</th>
+            <th scope="col">Film</th>
+            <th scope="col">Cast</th>
+            <th scope="col">Nama</th>
             <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>
-        @forelse ($film as $key => $item)
+        @forelse ($peran as $key => $item)
         <tr>
             <td>{{$key + 1}}</td>
-            <td>{{$item->judul}}</td>
-            <td>{{$item->ringkasan}}</td>
-            <td>{{$item->tahun}}</td>
-            <td>{{$item->poster}}</td>
-            <td>{{$item->Genre->nama}}</td>
+            <td>{{$item->film}}</td>
+            <td>{{$item->cast}}</td>
+            <td>{{$item->nama}}</td>
+            <td>{{$item->action}}</td>
             <td>
-               <form action="/film/{{ $item->id }}" method="POST" id="deleteForm">
-                <a href="/film/{{ $item->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
+               <form action="/peran/{{ $item->id }}" method="POST" id="deleteForm">
+                <a href="/peran/{{ $item->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
                 @csrf
                 @method('delete')
                 <button type="submit"  onclick="return confirm('Apakah anda yakin menghapus data?')" class="btn btn-danger btn-sm">Hapus</button>
